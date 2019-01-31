@@ -3,7 +3,7 @@
 
 Name:           sway
 Version:        1.0b2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        i3-compatible Wayland compositor
 
 License:        MIT
@@ -14,7 +14,7 @@ BuildRequires:  git
 BuildRequires:  gcc
 BuildRequires:  clang
 BuildRequires:  meson
-BuildRequires:  wlroots-devel
+BuildRequires:  wlroots-devel >= 0.2-2
 BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
 BuildRequires:  pcre-devel
@@ -28,10 +28,6 @@ BuildRequires:  libxkbcommon-devel
 BuildRequires:  systemd-devel
 
 Requires:       wlroots
-Requires:       libwayland-client
-Requires:       libwayland-server
-Requires:       libwayland-cursor
-Requires:       libxkbcommon
 Requires:       cairo
 Requires:       pango
 Requires:       gdk-pixbuf2
@@ -86,5 +82,8 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %changelog
+* Wed Jan  9 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.0b2-2
+- Incrementing release
+
 * Wed Jan  9 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.0b2-1
 - RPM release of sway 1.0-beta.2
