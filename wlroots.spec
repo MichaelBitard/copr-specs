@@ -1,6 +1,6 @@
 Name:           wlroots
-Version:        0.2
-Release:        2%{?dist}
+Version:        0.3
+Release:        1%{?dist}
 Summary:        A modular Wayland compositor library
 
 License:        MIT
@@ -99,5 +99,8 @@ or about 50,000 lines of code you were going to write anyway.
 
 
 %changelog
+* Sun Feb 03 2019 Aurelien Rouene <aurelien@rouene.fr> - 0.3-1
+- RPM release of wlroots 0.3
+
 * Wed Jan  9 2019 Aurelien Rouene <aurelien@rouene.fr> - 0.2-1
 - RPM release of wlroots 0.2
