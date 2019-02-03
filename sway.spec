@@ -1,9 +1,9 @@
-%global gitver 1.0-beta.2
+%global gitver 1.0-rc1
 
 
 Name:           sway
-Version:        1.0b2
-Release:        2%{?dist}
+Version:        1.0r1
+Release:        1%{?dist}
 Summary:        i3-compatible Wayland compositor
 
 License:        MIT
@@ -14,20 +14,20 @@ BuildRequires:  git
 BuildRequires:  gcc
 BuildRequires:  clang
 BuildRequires:  meson
-BuildRequires:  wlroots-devel >= 0.2-2
+BuildRequires:  wlroots-devel >= 0.3-1
 BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
+BuildRequires:  libevdev-devel
 BuildRequires:  pcre-devel
 BuildRequires:  json-c-devel
 BuildRequires:  pango-devel
 BuildRequires:  cairo-devel
 BuildRequires:  gdk-pixbuf2-devel
-BuildRequires:  pam-devel
 BuildRequires:  scdoc
 BuildRequires:  libxkbcommon-devel
 BuildRequires:  systemd-devel
 
-Requires:       wlroots
+Requires:       wlroots >= 0.3-1
 Requires:       cairo
 Requires:       pango
 Requires:       gdk-pixbuf2
@@ -60,8 +60,6 @@ sway is a work in progress i3-compatible Wayland compositor.
 %{_bindir}/sway
 %{_bindir}/swaybar
 %{_bindir}/swaybg
-%{_bindir}/swayidle
-%{_bindir}/swaylock
 %{_bindir}/swaymsg
 %{_bindir}/swaynag
 %{_datadir}/backgrounds/sway/*
@@ -73,7 +71,6 @@ sway is a work in progress i3-compatible Wayland compositor.
 %{_mandir}/man1/*.1.gz
 %{_mandir}/man5/*.5.gz
 
-%config %{_sysconfdir}/pam.d/swaylock
 %config %{_sysconfdir}/sway/config
 %config %{_sysconfdir}/sway/security.d/00-defaults
 
@@ -82,6 +79,9 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %changelog
+* Sun Feb  3 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.0r1-1
+- RPM release of sway 1.0-rc1
+
 * Wed Jan  9 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.0b2-2
 - Incrementing release
 
