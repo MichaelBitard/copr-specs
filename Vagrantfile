@@ -16,10 +16,10 @@ Vagrant.configure("2") do |config|
 
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
+    config.cache.auto_detect = false
 
     config.cache.synced_folder_opts = {
-      type: :nfs,
-      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+      type: :sshfs
     }
   end
 
@@ -76,6 +76,12 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   # config.vm.provision "shell", inline: "sudo dnf upgrade -y"
+
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo echo "keepcache=True" >> /etc/dnf/dnf.conf
+    sudo rm -rf /var/cache/dnf
+    sudo ln -sf /tmp/vagrant-cache /var/cache/dnf
+  SHELL
 
   config.vm.provision "shell", inline: <<-SHELL
     dnf upgrade -y
