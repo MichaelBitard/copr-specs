@@ -11,14 +11,17 @@ BuildRequires:  git
 BuildRequires:  gcc
 BuildRequires:  clang
 BuildRequires:  meson
+BuildRequires:  wlroots-devel >= 0.3-1
 BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
+BuildRequires:  pango-devel
 BuildRequires:  cairo-devel
 BuildRequires:  libxkbcommon-devel
 BuildRequires:  gdk-pixbuf2-devel
 BuildRequires:  pam-devel
 BuildRequires:  scdoc
 
+Requires:       wlroots >= 0.3-1
 Requires:       cairo
 Requires:       gdk-pixbuf2
 
