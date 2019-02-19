@@ -1,8 +1,8 @@
-%global gitver 1.0-rc1
+%global gitver 1.0-rc3
 
 
 Name:           sway
-Version:        1.0r1
+Version:        1.0r3
 Release:        1%{?dist}
 Summary:        i3-compatible Wayland compositor
 
@@ -79,6 +79,9 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %changelog
+* Tue Feb  19 2019 Michaël Bitard <bitard.michael@gmail.com> - 1.0r3-1
+- RPM release of sway 1.0-rc3
+
 * Sun Feb  3 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.0r1-1
 - RPM release of sway 1.0-rc1
 
