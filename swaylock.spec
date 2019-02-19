@@ -1,5 +1,5 @@
 Name:           swaylock
-Version:        1.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Screen locker for Wayland
 
@@ -62,5 +62,7 @@ swaylock is a screen locking utility for Wayland compositors.
 
 
 %changelog
+* Tue Feb  19 2019 Michaël Bitard <bitard.michael@gmail.com> - 1.3-1
+- RPM release of swaylock 1.3
 * Sun Feb  3 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.2-1
 - RPM release of swaylock 1.2
