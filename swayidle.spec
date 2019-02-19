@@ -1,5 +1,5 @@
 Name:           swayidle
-Version:        1.1
+Version:        1.2
 Release:        1%{?dist}
 Summary:        Idle management daemon for Wayland
 
@@ -51,5 +51,7 @@ with any Wayland compositor which implements the KDE idle protocol.
 
 
 %changelog
+* Tue Feb  19 2019 Michaël Bitard <bitard.michael@gmail.com> - 1.2-1
+- RPM release of swayidle 1.1
 * Sun Feb  3 2019 Aurelien Rouene <aurelien@rouene.fr> - 1.1-1
 - RPM release of swayidle 1.1
