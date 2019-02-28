@@ -1,13 +1,14 @@
 Name:           wlroots
-Version:        0.3
+Version:        0.4.1
 Release:        1%{?dist}
 Summary:        A modular Wayland compositor library
 
 License:        MIT
 URL:            https://github.com/swaywm/wlroots
-Source0:        %{url}/archive/%{version}.tar.gz
+Source0:        https://github.com/swaywm/wlroots/archive/0.4.1/wlroots-0.4.1.tar.gz
 
 BuildRequires:  gcc
+BuildRequires:  wget
 BuildRequires:  clang
 BuildRequires:  meson
 BuildRequires:  wayland-devel
@@ -57,14 +58,16 @@ or about 50,000 lines of code you were going to write anyway.
 
 
 %prep
-%autosetup
+%{_bindir}/ls /builddir/build/SOURCES
+%{_bindir}/wget https://github.com/swaywm/wlroots/archive/0.4.1/wlroots-0.4.1.tar.gz -O %{_sourcedir}/%{name}-%{version}.tar.gz
+%{_bindir}/ls /builddir/build/SOURCES
+%autosetup -v -n %{name}-%{version}
 
 # Remove all .gitignore files
 %{_bindir}/find %{_builddir}/%{name}-%{version} -name '.gitignore' -delete
 
-
 %build
-%meson --auto-features=auto
+%meson
 %meson_build
 
 
@@ -99,6 +102,9 @@ or about 50,000 lines of code you were going to write anyway.
 
 
 %changelog
+* Thu Feb 28 2019 Michael Bitard <bitard.michal@gmail.com> - 0.4.1-1
+- RPM release of wlroots 0.3
+
 * Sun Feb 03 2019 Aurelien Rouene <aurelien@rouene.fr> - 0.3-1
 - RPM release of wlroots 0.3
 
