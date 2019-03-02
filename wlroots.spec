@@ -8,22 +8,28 @@ URL:            https://github.com/swaywm/wlroots
 Source0:        https://github.com/swaywm/wlroots/archive/0.4.1/wlroots-0.4.1.tar.gz
 
 BuildRequires:  gcc
-BuildRequires:  wget
-BuildRequires:  clang
 BuildRequires:  meson
-BuildRequires:  wayland-devel
-BuildRequires:  wayland-protocols-devel
-BuildRequires:  egl-wayland-devel
-BuildRequires:  mesa-libEGL-devel
-BuildRequires:  mesa-libGLES-devel
-BuildRequires:  mesa-libgbm-devel
-BuildRequires:  libdrm-devel
-BuildRequires:  libinput-devel
-BuildRequires:  libxkbcommon-devel
-BuildRequires:  libgudev-devel
-BuildRequires:  pixman-devel
-BuildRequires:  libcap-devel
-BuildRequires:  systemd-devel
+BuildRequires:  pkgconfig(egl)
+BuildRequires:  pkgconfig(gbm) >= 17.1.0
+BuildRequires:  pkgconfig(glesv2)
+BuildRequires:  pkgconfig(libcap)
+BuildRequires:  pkgconfig(libdrm) >= 2.4.95
+BuildRequires:  pkgconfig(libinput) >= 1.7.0
+BuildRequires:  pkgconfig(libsystemd) >= 237
+BuildRequires:  pkgconfig(libudev)
+BuildRequires:  pkgconfig(pixman-1)
+BuildRequires:  pkgconfig(xcb)
+BuildRequires:  pkgconfig(xcb-composite)
+BuildRequires:  pkgconfig(xcb-errors)
+BuildRequires:  pkgconfig(xcb-icccm)
+BuildRequires:  pkgconfig(xcb-image)
+BuildRequires:  pkgconfig(xcb-render)
+BuildRequires:  pkgconfig(xcb-xfixes)
+BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  pkgconfig(wayland-egl)
+BuildRequires:  pkgconfig(wayland-protocols) >= 1.17
+BuildRequires:  pkgconfig(wayland-server) >= 1.16
+BuildRequires:  pkgconfig(xkbcommon)
 
 Provides:       wlroots = %{version}-%{release}
 
