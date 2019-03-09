@@ -9,6 +9,7 @@ Source0:        https://github.com/swaywm/wlroots/archive/0.4.1/wlroots-0.4.1.ta
 
 BuildRequires:  gcc
 BuildRequires:  meson
+BuildRequires:  wget
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(gbm) >= 17.1.0
 BuildRequires:  pkgconfig(glesv2)
