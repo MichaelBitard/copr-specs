@@ -8,7 +8,7 @@ Summary:        i3-compatible Wayland compositor
 
 License:        MIT
 URL:            https://github.com/swaywm/sway
-Source0:        %{url}/archive/%{gitver}.tar.gz
+Source0:        https://github.com/swaywm/sway/archive/%{gitver}/%{name}-%{gitver}.tar.gz
 
 BuildRequires:  wget
 BuildRequires:  git
@@ -41,9 +41,7 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 %prep
 %{_bindir}/ls /builddir/build/SOURCES
-%{_bindir}/wget https://github.com/swaywm/sway/archive/%{gitver}/%{name}-%{gitver}.tar.gz -O %{_sourcedir}/%{name}-%{version}.tar.gz
-%{_bindir}/ls /builddir/build/SOURCES
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-%{gitver}
 
 
 %build
