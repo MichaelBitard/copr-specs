@@ -66,8 +66,8 @@ or about 50,000 lines of code you were going to write anyway.
 
 %prep
 %{_bindir}/ls /builddir/build/SOURCES
-%{_bindir}/wget https://github.com/swaywm/wlroots/archive/0.4.1/wlroots-0.4.1.tar.gz -O %{_sourcedir}/%{name}-%{version}.tar.gz
-%{_bindir}/ls /builddir/build/SOURCES
+#%{_bindir}/wget https://github.com/swaywm/wlroots/archive/0.4.1/wlroots-0.4.1.tar.gz -O %{_sourcedir}/%{name}-%{version}.tar.gz
+#%{_bindir}/ls /builddir/build/SOURCES
 %autosetup -v -n %{name}-%{version}
 
 # Remove all .gitignore files
