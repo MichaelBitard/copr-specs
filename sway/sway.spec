@@ -10,7 +10,6 @@ License:        MIT
 URL:            https://github.com/swaywm/sway
 Source0:        https://github.com/swaywm/sway/archive/%{gitver}/%{name}-%{gitver}.tar.gz
 
-BuildRequires:  wget
 BuildRequires:  git
 BuildRequires:  gcc
 BuildRequires:  clang
@@ -27,6 +26,7 @@ BuildRequires:  gdk-pixbuf2-devel
 BuildRequires:  scdoc
 BuildRequires:  libxkbcommon-devel
 BuildRequires:  systemd-devel
+BuildRequires:  scdoc
 
 Requires:       wlroots >= 0.4-1
 Requires:       cairo
@@ -45,7 +45,7 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %build
-%meson --auto-features=auto
+%meson --auto-features=auto -Dman-pages=enabled
 %meson_build
 
 
