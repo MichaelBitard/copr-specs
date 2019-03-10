@@ -92,8 +92,8 @@ or about 50,000 lines of code you were going to write anyway.
 
 
 %files
-%{_libdir}/libwlroots.so.0.0.0
-%{_libdir}/libwlroots.so.0
+%{_libdir}/libwlroots.so.1.2.0
+%{_libdir}/libwlroots.so.1
 %{_libdir}/libwlroots.so
 
 %license LICENSE
