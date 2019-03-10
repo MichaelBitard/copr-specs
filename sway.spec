@@ -1,8 +1,8 @@
-%global gitver 1.0-rc3
+%global gitver 1.0-rc5
 
 
 Name:           sway
-Version:        1.0r3
+Version:        1.0r5
 Release:        1%{?dist}
 Summary:        i3-compatible Wayland compositor
 
@@ -10,11 +10,12 @@ License:        MIT
 URL:            https://github.com/swaywm/sway
 Source0:        %{url}/archive/%{gitver}.tar.gz
 
+BuildRequires:  wget
 BuildRequires:  git
 BuildRequires:  gcc
 BuildRequires:  clang
 BuildRequires:  meson
-BuildRequires:  wlroots-devel >= 0.3-1
+BuildRequires:  wlroots-devel >= 0.4-1
 BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
 BuildRequires:  libevdev-devel
@@ -27,7 +28,7 @@ BuildRequires:  scdoc
 BuildRequires:  libxkbcommon-devel
 BuildRequires:  systemd-devel
 
-Requires:       wlroots >= 0.3-1
+Requires:       wlroots >= 0.4-1
 Requires:       cairo
 Requires:       pango
 Requires:       gdk-pixbuf2
@@ -39,7 +40,10 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %prep
-%autosetup -n %{name}-%{gitver}
+%{_bindir}/ls /builddir/build/SOURCES
+%{_bindir}/wget https://github.com/swaywm/sway/archive/%{gitver}/%{name}-%{gitver}.tar.gz -O %{_sourcedir}/%{name}-%{version}.tar.gz
+%{_bindir}/ls /builddir/build/SOURCES
+%autosetup -n %{name}-%{version}
 
 
 %build
