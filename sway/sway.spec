@@ -26,7 +26,6 @@ BuildRequires:  gdk-pixbuf2-devel
 BuildRequires:  scdoc
 BuildRequires:  libxkbcommon-devel
 BuildRequires:  systemd-devel
-BuildRequires:  scdoc
 
 Requires:       wlroots >= 0.4-1
 Requires:       cairo
@@ -45,7 +44,7 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %build
-%meson --auto-features=auto -Dman-pages=enabled
+%meson --auto-features=auto -Dman-pages=disabled
 %meson_build
 
 
@@ -70,8 +69,8 @@ sway is a work in progress i3-compatible Wayland compositor.
 %{_datadir}/zsh/site-functions/*
 %{_datadir}/wayland-sessions/sway.desktop
 
-%{_mandir}/man1/*.1.gz
-%{_mandir}/man5/*.5.gz
+#%{_mandir}/man1/*.1.gz
+#%{_mandir}/man5/*.5.gz
 
 %config %{_sysconfdir}/sway/config
 %config %{_sysconfdir}/sway/security.d/00-defaults
