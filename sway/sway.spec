@@ -41,7 +41,7 @@ sway is a work in progress i3-compatible Wayland compositor.
 
 
 %build
-%meson --auto-features=auto -Dman-pages=disabled
+%meson --auto-features=auto -Dman-pages=disabled -Dwerror=false
 %meson_build
 
 
